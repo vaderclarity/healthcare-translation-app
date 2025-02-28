@@ -5,8 +5,7 @@ from pydantic import BaseModel
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 if not OPENAI_API_KEY:
     raise RuntimeError("⚠️ Missing API key! Please set OPENAI_API_KEY in .env file.")
